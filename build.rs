@@ -20,6 +20,7 @@ fn main() {
     // Step 2: Build Rust kernel library (this is done by Cargo)
     println!("cargo:rerun-if-changed=src/");
     println!("cargo:rerun-if-changed=boot.s");
+    println!("cargo:rerun-if-changed=build.rs");
 
     println!("Starting linking");
     // Step 3: Link to create kernel.bin
