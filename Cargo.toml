@@ -1,0 +1,17 @@
+[package]
+name = "knight_os"
+version = "0.1.0"
+authors = ["knightmar"]
+edition = "2018"
+
+[dependencies]
+
+[profile.dev]
+panic = "abort"
+
+[profile.release]
+panic = "abort"
+
+
+[lib]
+crate-type = ["staticlib"]
