@@ -3,6 +3,7 @@
 
 mod display;
 
+use crate::display::structs::{ColorCode, Colors};
 use crate::display::Display;
 use core::panic::PanicInfo;
 
@@ -17,7 +18,8 @@ static HELLO: &[u8] = b"Hello world\n";
 pub extern "C" fn kernel_main() -> ! {
     let vga_buffer = 0xb8000 as *mut u8;
 
-    Display::new(vga_buffer).print(HELLO);
+    let mut display = Display::new(vga_buffer, ColorCode::new(Colors::PINK, Colors::LIGHT_GREEN));
+    display.writer.print_string("Ceci est un test et tout est fonctionnel !!!");
 
     loop {}
 }

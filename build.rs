@@ -21,6 +21,7 @@ fn main() {
     println!("cargo:rerun-if-changed=src/");
     println!("cargo:rerun-if-changed=boot.s");
     println!("cargo:rerun-if-changed=build.rs");
+    println!("cargo:rerun-if-changed=NULL");
 
     println!("Starting linking");
     // Step 3: Link to create kernel.bin
